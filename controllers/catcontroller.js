@@ -26,10 +26,10 @@ router.get('/', (req, res) => {
     }))
 });
 
-router.get('/:id', (req, res) => {
+router.get('/catName', (req, res) => {
     Cat.findOne({
         where: {
-            id: req.params.id
+            id: req.params.catName
         }
     })
     .then(bet => res.status(200).json(bet))
@@ -38,10 +38,10 @@ router.get('/:id', (req, res) => {
     }))
 })
 
-router.put('/:id', (req, res) => {
+router.put('/:catName', (req, res) => {
     Cat.update(req.body, {
         where: {
-            id: req.params.id
+            catName: req.params.catName
         }
     })
     .then(bet => res.status(200).json(bet))
@@ -50,10 +50,10 @@ router.put('/:id', (req, res) => {
     }))
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:catName', (req, res) => {
     Cat.destroy({
         where: {
-            id: req.params.id
+            catName: req.params.catName
         }
     })
     .then(bet => res.status(200).json(bet))
